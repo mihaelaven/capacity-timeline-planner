@@ -1,5 +1,27 @@
-# Validation
+# Testing and limitations
 
-Four inherited regression tests cover basic scheduling, shared capacity, dependency ordering, missing assignments and monthly leave. The original browser demo was smoke-checked. Dates are scenario outputs, with the fixed illustrative holidays listed in the README.
+## Checked
 
-Extraction checks verify that the app HTML matches the source, the bundled instructions and examples are present, JavaScript parses, and repository-relative README links resolve. These checks do not establish live connector compatibility.
+Four automated tests pass for basic scheduling, shared capacity, dependency order, role assignments and monthly leave. Basic browser checks cover the fictional team and planning controls.
+
+The extraction checks also cover JavaScript syntax, bundled files and local documentation links.
+
+## Next checks
+
+- Larger plans and complex dependency graphs.
+- More browsers and mobile layouts.
+- Comparison with real team calendars and delivery results.
+
+## Before using real data
+
+Start with fictional data and a test destination. Review owners, dates, source links and proposed writes. Keep a separate copy of important results.
+
+## Repeat the automated checks
+
+Use Node.js 20 or newer:
+
+```sh
+node --test tests/app.test.cjs
+```
+
+These checks run locally and in GitHub Actions. They use bundled examples and local code.
